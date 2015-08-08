@@ -7,11 +7,15 @@ install:
 build_script:
     - mkdir Test
 
+artifacts:
+  - name: msys2-base-i686-20150512.tar.xz
+    path: msys2-base-i686-20150512.tar.xz
+
 deploy:
   provider: FTP
   protocol: sftp
   host: 106.186.28.242
   username: msys2
   password: msys2
-  folder: /asdas
+  folder: /home/msys2/
   artifact: msys2-base-i686-20150512.tar.xz
