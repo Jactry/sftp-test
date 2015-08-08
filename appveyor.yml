@@ -1,0 +1,17 @@
+version: 1.0.{build}
+
+install:
+    - cinst axel
+    - cmd: axel http://sourceforge.net/projects/msys2/files/Base/i686/msys2-base-i686-20150512.tar.xz > nul  
+
+build_script:
+    - mkdir Test
+
+deploy:
+  provider: FTP
+  protocol: sftp
+  host: 106.186.28.242
+  username: msys2
+  password: msys2
+  folder: /home/msys2/
+  artifact: msys2-base-i686-20150512.tar.xz
